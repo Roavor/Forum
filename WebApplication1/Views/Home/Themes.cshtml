@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Themes";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                @foreach (var theme in ViewBag.themes)
+                {
+                    <tr>
+                        <td>@theme.Author</td>
+                        <td>@theme.Text</td>
+                    </tr>
+                }
+            </table>
+            
+        </div>
+    </div>
+</div>  

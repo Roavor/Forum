@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Models.Themes
+
+@{
+    ViewBag.Title = "AddTheme";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ValidationSummary()
+        <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+        <p>
+            <label>Name of theme</label><br />
+            @Html.EditorFor(model => model.Them)
+        </p>
+        <p>
+            <label>Text</label><br />
+            @Html.EditorFor(model => model.Text)
+        </p>
+        <p><button type="submit">Add</button></p>
+    </div>
+}
+
